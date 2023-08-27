@@ -1,0 +1,36 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "b13b2b8dtrial",
+          "space": "dev",
+          "instance": "sample-capjava-bookshop-db",
+          "key": "sample-capjava-bookshop-db-key",
+          "resolved": false
+        },
+        "kind": "hana-cloud",
+        "vcap": {
+          "name": "db"
+        }
+      },
+      "auth": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "b13b2b8dtrial",
+          "space": "dev",
+          "instance": "sample-capjava-bookshop-auth",
+          "key": "sample-capjava-bookshop-auth-key",
+          "resolved": false
+        },
+        "kind": "xsuaa",
+        "vcap": {
+          "name": "auth"
+        }
+      }
+    }
+  }
+}

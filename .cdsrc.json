@@ -1,0 +1,12 @@
+{
+    "build": {
+        "target": "."
+    },
+    "hana": {
+        "deploy-format": "hdbtable"
+    },
+    "requires": {
+        "db": "hana",
+        "auth": "xsuaa"
+    }
+}
