@@ -3,7 +3,7 @@
 *.db
 *.sqlite
 schema.sql
-default-env.json
+# default-env.json
 
 **/bin/
 **/target/
@@ -27,3 +27,8 @@ hs_err*
 .vscode
 .idea
 .reloadtrigger
+# added by cds
+.cdsrc-private.json
+
+# added by cds
+.cdsrc-private.json

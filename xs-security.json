@@ -22,7 +22,7 @@
     "redirect-uris": [
       "https://*.cfapps.us10-001.hana.ondemand.com/**",
       "https://*.applicationstudio.cloud.sap/**",
-      "http://localhost:5002/**"
+      "http://localhost:*/**"
     ]
   }
 }

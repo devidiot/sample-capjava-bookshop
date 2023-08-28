@@ -68,6 +68,8 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+      service-keys:
+        - name: sample-capjava-bookshop-db-key
   - name: sample-capjava-bookshop-auth
     type: org.cloudfoundry.managed-service
     parameters:
@@ -77,3 +79,5 @@ resources:
       config:
         xsappname: sample-capjava-bookshop-${org}-${space}
         tenant-mode: dedicated
+      service-keys:
+        - name: sample-capjava-bookshop-auth-key
