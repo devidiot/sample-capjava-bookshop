@@ -124,12 +124,12 @@ welcomeFile로 지정한 app/index.html을 생성하여 아래와 같이 작성�
 </HTML>
 ```
 
-신규 CAP Java 프로젝트를 생성한 후 여기까지 따라한 후 아래 글인 배포 및 실행을 수행한다. 
+신규 CAP Java 프로젝트를 생성한 후 여기까지 따라한 후 아래 글에 따라 배포하고 실행한다.
 
 <br/> <br/> <br/> <br/> 
 
 # 배포 및 실행
-사전에 cf에 login 해야한다.
+사전에 cf에 login 해야한다. **아래 링크 참조**
 
 https://help.sap.com/docs/btp/sap-business-technology-platform/log-on-to-cloud-foundry-environment-using-cloud-foundry-command-line-interface
 
@@ -139,16 +139,13 @@ https://help.sap.com/docs/btp/sap-business-technology-platform/log-on-to-cloud-f
 
 DB Deploy를 위해 .cdsrc.json에 hana.deploy-format=hdbtable을 추가한다.
 
-최신의 HANA Cloud DB는 더이상 .hdbcds 배포를 지원하지 않는다. 따라서 hdbtable/hdbview 배포를 사용하기 위해 이 구성을 추가한다.
+**최신의 HANA Cloud(DB)는 더이상 .hdbcds 배포를 지원하지 않는다. hdbtable/hdbview 배포를 사용해야 하므로 이 구성을 추가한해야 한다.**
 
 ```
 {
-    "build": {
-        "target": "."
-    },
     "hana": {
         "deploy-format": "hdbtable"
-    },
+    }
 }
 ```
 
@@ -193,12 +190,12 @@ admin 권한은 BTP Cockpit의 Subaccount에서 적절한 이름의 Role Collect
 CF에 배포된 HDI Container 서비스와 XSUAA 서비스에 로컬 개발환경을 연결하여 개발이 가능하도록 한다.
 Hybrid 라는 이름의 profile을 구성하여 이를 통해 로컬 서비스를 구동한다.
 
-아래 두 명령을 실행하여 HDI Container와 XSUAA 서비스를 바인드한다.
+아래 두 명령을 실행하여 HDI Container와 XSUAA 서비스를 바인드한다. 
 ```
 cds bind -2 sample-capjava-bookshop-db
 cds bind -2 sample-capjava-bookshop-auth
 ```
-
+실행후엔 hybrid provile로 구동 시 CF와 연결하여 구동하는데 필요한 바인드 정보가 .cdsrc-private.json 파일에 작성된다.
 
 ## Destination 설정
 
